@@ -11,6 +11,8 @@ import java.util.Date;
 public class Note {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "note_seq")
+    @SequenceGenerator(name = "note_seq", sequenceName = "note_sequence", allocationSize = 1)
     Long noteId = 0L;
 
     String noteTitle;
